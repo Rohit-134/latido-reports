@@ -30,11 +30,12 @@ function submitForm() {
   console.log(reportID)
   
   // Getting the Browser name 
-  var browser = document.getElementById("browserinput");
-  var browser_name = browser.value;
-  console.log(browser_name);
-  
-  fetchReport(reportID, browser_name);
+  // var browser = document.getElementById("browserinput");
+  // var browser_name = browser.value;
+  // console.log(browser_name);
+  // fetchReport(reportID, browser_name);
+
+  fetchReport(reportID);
 
 }
 
@@ -44,11 +45,11 @@ function submitForm() {
 
 const fetchReport = (reportID) => {
   axios
-    .get("https://Rohit-134.github.io/latido-report-archives/" + reportID + "/")  // Chnage this url for the post 
+    .get("https://Rohit-134.github.io/latido-report-archives/"+reportID+"/")  // Chnage this url for the post 
     .then((response) => {
       console.log(response);
       window.open(
-        "https://Rohit-134.github.io/latido-report-archives/" + reportID + "/"
+        "https://Rohit-134.github.io/latido-report-archives/"+reportID+"/"
       );
     })
     .catch((error) => {
